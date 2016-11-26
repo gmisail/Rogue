@@ -10,6 +10,11 @@
 int WIDTH = 25;
 int HEIGHT = 48;
 
+const char* up = "w";
+const char* down = "s";
+const char* left = "a";
+const char* right = "d";
+
 const char wall = 'X';
 const char goblin = '*';
 const char player = '@';
@@ -91,25 +96,25 @@ int main(){
 
         /* player controls */
         map[player_y][player_x] = 0;
-        if(strcmp(command, "down") == 0){
+        if(strcmp(command, down) == 0){
             if(map[player_y + 1][player_x] == 0){
                 player_y++;
             }
         }
 
-        if(strcmp(command, "up") == 0){
+        if(strcmp(command, up) == 0){
             if(map[player_y - 1][player_x] == 0){
                 player_y--;
             }
         }
 
-        if(strcmp(command, "left") == 0){
+        if(strcmp(command, left) == 0){
             if(map[player_y][player_x - 1] == 0){
                 player_x--;
             }
         }
 
-        if(strcmp(command, "right") == 0){
+        if(strcmp(command, right) == 0){
             if(map[player_y][player_x + 1] == 0){
                 player_x++;
             }
